@@ -1,0 +1,9 @@
+<h2>User</h2>
+
+<%= render @user %>
+
+<h2>Organized events</h2>
+
+<% @user.organized_events.each do |event| %>
+  <%= render 'shared/event', event: event %>
+<% end %>
