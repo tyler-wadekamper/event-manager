@@ -5,5 +5,5 @@
 <h2>Organized events</h2>
 
 <% @user.organized_events.each do |event| %>
-  <%= render 'shared/event', event: event %>
+  <%= render 'events/event', event: event %>
 <% end %>

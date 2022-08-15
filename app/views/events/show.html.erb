@@ -1,3 +1,6 @@
 <h2>Event Details</h2>
 
-<%= render 'shared/event', event: @event %>
+<%= render 'events/event', event: @event %>
+
+<%= button_to 'Attend event', 
+    event_attendees_path(event_attendee: { event_id: @event.id, attendee_id: current_user.id }) %>
