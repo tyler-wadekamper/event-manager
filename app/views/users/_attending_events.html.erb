@@ -1,7 +1,5 @@
 <h2>Attending events</h2>
 
-<% user.attended_events.each do |event| %>
-  <% if Date.parse(event.date) >= Date.today %>
-    <%= render 'events/event', event: event %>
-  <% end %>
+<% user.attended_events.upcoming.each do |event| %>
+  <%= render 'events/event', event: event %>
 <% end %>
