@@ -2,14 +2,8 @@
 
 <%= render @user %>
 
-<h2>Organized events</h2>
+<%= render 'organized_events', user: @user %>
 
-<% @user.organized_events.each do |event| %>
-  <%= render 'events/event', event: event %>
-<% end %>
+<%= render 'attending_events', user: @user %>
 
-<h2>Attended events</h2>
-
-<% @user.attended_events.each do |event| %>
-  <%= render 'events/event', event: event %>
-<% end %>
+<%= render 'attended_events', user: @user %>
