@@ -2,6 +2,6 @@
   <strong>Attendees:</strong>
   
   <% event.attendees.each do |attendee| %>
-    <%= attendee.full_name %>
+    <%= render 'users/user_name', user: attendee %>
   <% end %>
 </p>

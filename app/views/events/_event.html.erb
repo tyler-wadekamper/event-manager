@@ -1,11 +1,11 @@
 <p>
   <strong>Name:</strong>
-  <%= event.name %>
+  <%= link_to event.name, event_url(event.id) %>
 </p>
 
 <p>
   <strong>Organizer:</strong>
-  <%= event.organizer.full_name %>
+  <%= render 'users/user_name', user: event.organizer %>
 </p>
 
 <p>

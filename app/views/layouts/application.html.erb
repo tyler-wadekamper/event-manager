@@ -17,6 +17,10 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
+    <%= link_to 'Events', events_path %>
+    <%= render 'layouts/shared/user_info' %>
+
     <%= yield %>
   </body>
 </html>
