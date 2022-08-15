@@ -1,16 +1,4 @@
 <%= form_with(model: event_attendee) do |form| %>
-  <% if event_attendee.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(event_attendee.errors.count, "error") %> prohibited this user from attending this event:</h2>
-
-      <ul>
-        <% event_attendee.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div>
     <%= form.hidden_field :event_id, value: event_attendee.event_id %>
   </div>
@@ -20,6 +8,6 @@
   </div>
 
   <div>
-    <%= form.submit 'Attend event' %>
+    <%= form.submit %>
   </div>
 <% end %>

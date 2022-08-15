@@ -2,5 +2,12 @@
 
 <%= render 'events/event', event: @event %>
 
-<%= button_to 'Attend event', 
-    event_attendees_path(event_attendee: { event_id: @event.id, attendee_id: current_user.id }) %>
+<%= render 'event_attendees/attendees', event: @event %>
+
+<% if user_signed_in? %>
+  <%= button_to 'Attend event', 
+      event_attendees_path(event_attendee: { event_id: @event.id, 
+                                             attendee_id: current_user.id }) %>
+<% else %>
+  <%= link_to 'Log in to attend event', new_user_session_path %>
+<% end %>

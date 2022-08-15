@@ -7,3 +7,9 @@
 <% @user.organized_events.each do |event| %>
   <%= render 'events/event', event: event %>
 <% end %>
+
+<h2>Attended events</h2>
+
+<% @user.attended_events.each do |event| %>
+  <%= render 'events/event', event: event %>
+<% end %>

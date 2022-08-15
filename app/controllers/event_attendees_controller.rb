@@ -1,12 +1,11 @@
 class EventAttendeesController < ApplicationController
+  before_action :authenticate_user!
+  
   def create
     @event_attendee = EventAttendee.new(event_attendee_params)
 
-    if @event_attendee.save
-      redirect_to event_url(event_attendee_params[:event_id])
-    else
-      render event_path(event_attendee_params[:event_id]), status: :unprocessable_entity
-    end
+    flash[:alert] = 'You are already attending this event.' unless @event_attendee.save
+    redirect_to event_url(event_attendee_params[:event_id])
   end
 
   private
